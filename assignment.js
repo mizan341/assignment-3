@@ -13,6 +13,7 @@ console.log(result);
 /*--------------------------feetToMileEnd------------------------------------------------------*/
 
 /*--------------------------woodCalculatorStart------------------------------------------------*/
+
 function woodCalculator(chair, table, bed) {
     var chairWood = chair * 1;  // 1pic chair = 1 quebec feet wood need
     var tableWood = table * 2;  // 1pic table = 2 quebec feet wood need
@@ -35,5 +36,25 @@ console.log(result);
 
 /*--------------------------tinyFriendStart----------------------------------------------------*/
 
-/*--------------------------tinyFriendEnd------------------------------------------------------*/
+function tinyFriend(name) {
+    var shortLength = Infinity;
+    var shortest = "";
 
+    if (name.length > 0) {
+        for (var i = 0; i < name.length; i++) {
+            if (typeof name[i] === 'string' && name[i].length < shortLength) {
+                shortest = name[i];
+                shortLength = name[i].length; 
+            }
+             if (name[i].length == "" || name[i].length <= 0) {
+                 return "OOPS! input is invalid.";
+             }
+        }
+   }
+    return shortest;
+}
+
+var result = tinyFriend(["abcd", "abc", "abcde", "aa", "a", "acd"]);
+console.log(result); 
+
+/*--------------------------tinyFriendEnd------------------------------------------------------*/
