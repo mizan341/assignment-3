@@ -31,6 +31,29 @@ console.log(result);
 
 /*--------------------------brickCalculatorStart-----------------------------------------------*/
 
+function brickCalculator(floor) {
+    
+   if (floor<=10) {
+       var tenFloor = floor * 15000;
+       return tenFloor;
+   }
+   if (floor<=20) {
+       var tenFloor = 10 * 15000;
+       var nextFloor = (floor - 10) * 12000;
+       var twentyFloor = tenFloor + nextFloor;
+       return twentyFloor;
+   }
+   if (floor>20) {
+       var tenFloorBrick = 10 * 15000;
+       var nextFloorBrick = (20-10) * 12000;
+       var otherFloor = (floor - 20) * 10000;
+       totalFloor = tenFloorBrick + nextFloorBrick + otherFloor;
+       return totalFloor;
+   }
+   return floor;
+}
+var result = brickCalculator(30);
+console.log(result);
 
 /*--------------------------brickCalculatorEnd-------------------------------------------------*/
 
