@@ -33,26 +33,29 @@ console.log(result);
 
 function brickCalculator(floor) {
     
-   if (floor<=10) {
+   if (floor <= 10 && floor >= 0) {
        var tenFloor = floor * 15000;
        return tenFloor;
    }
-   if (floor<=20) {
+   if (floor <= 20 && floor >= 0) {
        var tenFloor = 10 * 15000;
        var nextFloor = (floor - 10) * 12000;
        var twentyFloor = tenFloor + nextFloor;
        return twentyFloor;
    }
-   if (floor>20) {
+   if (floor > 20 && floor >= 0) {
        var tenFloorBrick = 10 * 15000;
        var nextFloorBrick = (20-10) * 12000;
        var otherFloor = (floor - 20) * 10000;
        totalFloor = tenFloorBrick + nextFloorBrick + otherFloor;
        return totalFloor;
    }
+   else{
+       return " ERROR-Please input positive value.";
+   }
    return floor;
 }
-var result = brickCalculator(30);
+var result = brickCalculator(-30);
 console.log(result);
 
 /*--------------------------brickCalculatorEnd-------------------------------------------------*/
@@ -70,7 +73,7 @@ function tinyFriend(name) {
                 shortLength = name[i].length; 
             }
              if (name[i].length == "" || name[i].length <= 0) {
-                 return "OOPS! input is invalid.";
+                 return "OOPS! Input is invalid.";
              }
         }
    }
